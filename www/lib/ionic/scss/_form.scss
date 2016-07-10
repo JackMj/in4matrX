@@ -50,6 +50,7 @@ textarea {
   position: relative;
   overflow: hidden;
   padding: 6px 0 5px 16px;
+  color: red;
 
   input {
     @include border-radius(0);
