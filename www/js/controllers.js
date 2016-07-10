@@ -8,7 +8,8 @@ angular.module('app.controllers', [])
   google.load("feeds", "1");
   $scope.init = function() {
 
-      var feed = new google.feeds.Feed("http://feeds.abcnews.com/abcnews/topstories");
+      var feed = new google.feeds.Feed("https://feeds.feedburner.com/EducationWeekItmanagementandpolicy");
+      feed.setNumEntries(8);
       feed.load(function(result)
         {
             //console.log(result);
@@ -20,6 +21,7 @@ angular.module('app.controllers', [])
                console.log($scope.entries);
 
              }
+             
            }
          });
     }
