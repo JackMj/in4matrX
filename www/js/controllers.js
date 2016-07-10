@@ -1,12 +1,12 @@
 angular.module('app.controllers', [])
 
-.controller('informationCtrl', function($scope)
+.controller('updatesCtrl', function($scope)
  {
 
 
   $scope.init = function() {
 
-      var feed = new google.feeds.Feed("https://feeds.feedburner.com/EducationWeekItmanagementandpolicy");
+      var feed = new google.feeds.Feed("http://www.ukzn.ac.za/Feeds/NewsRSS");
         feed.setNumEntries(8);
         feed.load(function(result)
         {
@@ -30,7 +30,7 @@ google.setOnLoadCallback($scope.init);
 {
 
 
-      var feed = new google.feeds.Feed("http://feeds.news24.com/articles/News24/SouthAfrica/rss");
+      var feed = new google.feeds.Feed("http://www.ukzn.ac.za/Feeds/NewsRSS");
         feed.setNumEntries(8);
         feed.load(function(result)
         {

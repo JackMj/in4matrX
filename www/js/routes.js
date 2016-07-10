@@ -10,12 +10,12 @@ angular.module('app.routes', [])
     
   
 
-      .state('tabsController.information', {
+      .state('tabsController.updates', {
     url: '/page2',
     views: {
       'tab1': {
-        templateUrl: 'templates/information.html',
-        controller: 'informationCtrl'
+        templateUrl: 'templates/updates.html',
+        controller: 'updatesCtrl'
       }
     }
   })
@@ -30,12 +30,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('tabsController.updates', {
+  .state('tabsController.collaborate', {
     url: '/page4',
     views: {
       'tab3': {
-        templateUrl: 'templates/updates.html',
-        controller: 'updatesCtrl'
+        templateUrl: 'templates/collaborate.html',
+        controller: 'collaborateCtrl'
       }
     }
   })
