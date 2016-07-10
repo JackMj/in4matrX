@@ -1,7 +1,7 @@
 angular.module('app.controllers', [])
   
 .controller('informationCtrl', function($scope) {
-
+    console.log("Hello info");
 })
    
 .controller('resourcesCtrl', function($scope) {
