@@ -3,7 +3,7 @@ angular.module('app.controllers', [])
 .controller('updatesCtrl', function($scope)
  {
 
-
+//laugh
   $scope.init = function() {
 
       var feed = new google.feeds.Feed("https://feeds.feedburner.com/EducationWeekItmanagementandpolicy");
