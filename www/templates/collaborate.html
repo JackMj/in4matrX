@@ -1,0 +1,30 @@
+
+<ion-view title="Updates" id="page4" class=" ">
+    
+   <ion-content ng-controller="collaborateCtrl" scrolling="false" padding="true" style="background: url(img/R71J7mqRamxb6D3vZoVg_bg3.jpg) no-repeat center;background-size:cover;" class="has-header">
+      <label class="item item-input item-normal-label " id="page-input9">
+      <span class="input-label">Collaborate</span>
+      <input type="text" name="colText" ng-model="collaboText">
+      </label>
+
+        <button id="page-button6" class=" button button-positive  button-block " ng-click="shareCollabo();">Share</button>
+        <ul>
+            <li ng-repeat="collaboration in collaborations | reverse">
+                <div class="list card " id="page-card21">
+                <ion-item class="item-avatar  " id="page-list-item6">
+                    <h2>{{collaboration.user[1]}}</h2>
+                </ion-item>
+                <div class="item item-body " id="page-list-item-container1">
+                    <p id="page-null" style="margin-top:0px;color:#000000;">
+                        {{collaboration.text}}
+                    </p>
+                </div>
+                 <p>
+                    <a href="#" class="subdued">1 Like</a>
+                    <a href="#" class="subdued">5 Comments</a>
+                  </p>
+                </div>                
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

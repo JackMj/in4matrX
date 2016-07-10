@@ -3,7 +3,7 @@ angular.module('app.controllers', [])
  
 
 
-.controller('informationCtrl', function($scope)
+.controller('updatesCtrl', function($scope)
  {
   google.load("feeds", "1");
   $scope.init = function() {
@@ -34,8 +34,20 @@ google.setOnLoadCallback($scope.init);
 
 })
 
-.controller('updatesCtrl', function($scope) {
-        $scope.taabo = "Hello man";
+.controller('collaborateCtrl', function($scope) {
+
+    var collaboDate = new Date();
+    $scope.collaborations = [];
+      $scope.shareCollabo = function(){
+         $scope.collabos = {
+          text : $scope.collaboText,
+          dateTime : collaboDate,
+          user : ["Bongi","Muzi","Thami"]
+        }
+        $scope.collaborations.push($scope.collabos)
+      }
+      
+
 })
 
 .controller('loginCtrl', function($scope) {
@@ -49,3 +61,8 @@ google.setOnLoadCallback($scope.init);
 .controller('landingScreenCtrl', function($scope) {
 
 })
+.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});

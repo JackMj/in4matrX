@@ -1,17 +1,21 @@
-<<<<<<< HEAD
-<ion-view title="Updates" id="page4" class=" ">
-    
-    <ion-content scrolling="false" padding="true" style="background: url(img/R71J7mqRamxb6D3vZoVg_bg3.jpg) no-repeat center;background-size:cover;" class="has-header">
-        <ion-list id="updates-list11" class=" ">
-            <ion-item id="updates-list-item21" class="  ">{{taabo}}</ion-item>
-            <ion-item id="updates-list-item22" class="  ">Item 2</ion-item>
-            <ion-item id="updates-list-item23" class="  ">Item 3</ion-item>
-        </ion-list>
-=======
+<ion-view ng-controller="updatesCtrl" title="Information" id="page2" class="positive" data-ng-init="init()">
+    <ion-content padding="true" style="background: url(img/mZbLF9jT6I7DKoa1PPAR_bg3.jpg) no-repeat center;background-size:cover;" class="has-header">
+      <ul>
+        <li ng-repeat="en in entries">
+          <div class="list card">
+                <div class="item item-avatar">
+                  <img src="mcfly.jpg">
+                  <h2>{{en.title}}</h2>
+                  <p>{{en.publishedDate}}</p>
+                </div>
 
-<ion-view title="Updates" id="page4" class="">
-    <ion-content scrolling="false" padding="true" style="background: url(img/R71J7mqRamxb6D3vZoVg_bg3.jpg) no-repeat center;background-size:cover;" class="has-header">
+                <div class="item item-body">
+                  <img class="full-image" src="delorean.jpg">
+                  <p>{{en.content}}
+                  </p>
+                </div>
+            </div>
+        </li>
 
->>>>>>> a7831aeb2330700d2483418eb5ab82ec4029d14b
     </ion-content>
 </ion-view>
