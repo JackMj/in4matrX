@@ -15,12 +15,12 @@ angular.module('app.controllers', [])
             //console.log(result);
            if (!result.error) {
 
-             for (var i = 0; i < result.feed.entries.length; i++)
-             {
+         
                 $scope.entries = result.feed.entries;
-               console.log($scope.entries);
+                $scope.entriesLength = $scope.entries.length;
+               console.log($scope.entries.content);
 
-             }
+            
              
            }
          });
