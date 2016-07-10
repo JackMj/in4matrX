@@ -1,16 +1,14 @@
 angular.module('app.controllers', [])
 
- 
-
-
 .controller('updatesCtrl', function($scope)
  {
-  google.load("feeds", "1");
+
+
   $scope.init = function() {
 
-      var feed = new google.feeds.Feed("https://feeds.feedburner.com/EducationWeekItmanagementandpolicy");
-      feed.setNumEntries(8);
-      feed.load(function(result)
+      var feed = new google.feeds.Feed("http://www.ukzn.ac.za/Feeds/NewsRSS");
+        feed.setNumEntries(8);
+        feed.load(function(result)
         {
             //console.log(result);
            if (!result.error) {
@@ -20,33 +18,44 @@ angular.module('app.controllers', [])
                 $scope.entriesLength = $scope.entries.length;
                console.log($scope.entries.content);
 
+<<<<<<< HEAD
             
              
+=======
+             }
+>>>>>>> 7bcd6ca13d3735022c15adf1227ab22fc6d8c320
            }
          });
     }
 
 google.setOnLoadCallback($scope.init);
+})
+
+.controller('resourcesCtrl', function($scope)
+{
+
+
+      var feed = new google.feeds.Feed("http://www.ukzn.ac.za/Feeds/NewsRSS");
+        feed.setNumEntries(8);
+        feed.load(function(result)
+        {
+              console.log("running");
+           if (!result.error) {
+
+             for (var i = 0; i < result.feed.entries.length; i++)
+             {
+                $scope.resources = result.feed.entries;
+               console.log($scope.entries);
+
+             }
+           }
+         });
+
 
 })
 
-.controller('resourcesCtrl', function($scope) {
-
-})
-
-.controller('collaborateCtrl', function($scope) {
-
-    var collaboDate = new Date();
-    $scope.collaborations = [];
-      $scope.shareCollabo = function(){
-         $scope.collabos = {
-          text : $scope.collaboText,
-          dateTime : collaboDate,
-          user : ["Bongi","Muzi","Thami"]
-        }
-        $scope.collaborations.push($scope.collabos)
-      }
-      
+.controller('updatesCtrl', function($scope)
+ {
 
 })
 
@@ -61,8 +70,3 @@ google.setOnLoadCallback($scope.init);
 .controller('landingScreenCtrl', function($scope) {
 
 })
-.filter('reverse', function() {
-  return function(items) {
-    return items.slice().reverse();
-  };
-});
