@@ -9,7 +9,7 @@ angular.module('app.controllers', [])
 })
    
 .controller('updatesCtrl', function($scope) {
-
+        $scope.taabo = "Hello man";
 })
          
 .controller('loginCtrl', function($scope) {
