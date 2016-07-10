@@ -6,7 +6,7 @@ angular.module('app.controllers', [])
 
   $scope.init = function() {
 
-      var feed = new google.feeds.Feed("http://www.ukzn.ac.za/Feeds/NewsRSS");
+      var feed = new google.feeds.Feed("https://feeds.feedburner.com/EducationWeekItmanagementandpolicy");
         feed.setNumEntries(8);
         feed.load(function(result)
         {
@@ -18,17 +18,35 @@ angular.module('app.controllers', [])
                 $scope.entriesLength = $scope.entries.length;
                console.log($scope.entries.content);
 
-<<<<<<< HEAD
-            
-             
-=======
              }
->>>>>>> 7bcd6ca13d3735022c15adf1227ab22fc6d8c320
-           }
-         });
+
+           });
+         };
+         google.setOnLoadCallback($scope.init);
     }
 
-google.setOnLoadCallback($scope.init);
+
+)
+
+.controller('collaborateCtrl',function($scope){
+      var collaboDate = new Date();
+
+      var dd = collaboDate.getDate();
+      var month = collaboDate.getMonth();
+      var year = collaboDate.getFullYear();
+      var hours = collaboDate.getHours();
+      var minutes = collaboDate.getMinutes();
+       $scope.postDateTime = dd + " " + month + " " + year + "    " + hours +":"+month; 
+    $scope.collaborations = [];
+      $scope.shareCollabo = function(){
+         $scope.collabos = {
+          text : $scope.collaboText,
+          dateTime : collaboDate,
+           user : ["Bongi","Muzi","Thami"]
+         }
+         $scope.collaborations.push($scope.collabos)
+       }
+     
 })
 
 .controller('resourcesCtrl', function($scope)
@@ -42,22 +60,18 @@ google.setOnLoadCallback($scope.init);
               console.log("running");
            if (!result.error) {
 
-             for (var i = 0; i < result.feed.entries.length; i++)
-             {
+      
                 $scope.resources = result.feed.entries;
                console.log($scope.entries);
 
-             }
+             
            }
          });
 
 
 })
 
-.controller('updatesCtrl', function($scope)
- {
 
-})
 
 .controller('loginCtrl', function($scope) {
 
@@ -69,4 +83,9 @@ google.setOnLoadCallback($scope.init);
 
 .controller('landingScreenCtrl', function($scope) {
 
+})
+.filter("reverse",function(){
+    return function(items) {
+    return items.slice().reverse();
+  };
 })
